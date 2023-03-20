@@ -1,6 +1,21 @@
 <script>
+import axios from 'axios';
+const endpoint = '';
+const emptyForm = { title: '', publisher: '', platform: '', genre: '', image: '', price: '', release_Date: '', size: '' };
+
 export default {
     name: 'SuggestionFormPage',
+    data: () => ({
+        form: emptyForm,
+
+
+    }),
+    methods: {
+        sendForm() {
+            axios.post(endpoint, this.form)
+                .then(() => { this.form = emptyForm })
+        }
+    }
 }
 
 </script>
@@ -10,7 +25,7 @@ export default {
 <template>
     <section class="suggestion-form">
         <h3 class="my-4">Aggiungi un gioco</h3>
-        <form>
+        <form novalidate @submit.prevent="sendForm">
             <div class="container">
                 <div class="row">
                     <!-- TITOLO -->
@@ -76,9 +91,9 @@ export default {
                     <!-- Data di rilascio -->
                     <div class="col-4">
                         <div class="mb-3">
-                            <label for="release-date" class="form-label">Data di rilascio:</label>
-                            <input type="date" class="form-control" id="release-date" placeholder="Data di rilascio"
-                                name="release-date">
+                            <label for="release_date" class="form-label">Data di rilascio:</label>
+                            <input type="date" class="form-control" id="release_date" placeholder="Data di rilascio"
+                                name="release_date">
                         </div>
                     </div>
 
@@ -90,6 +105,13 @@ export default {
                             <input type="number" class="form-control" id="size" placeholder="Peso" name="size">
                         </div>
                     </div>
+
+                    <!-- Bottoni -->
+                    <div class="mb-3 d-flex justify-content-end">
+
+                    </div>
+
+
                 </div>
             </div>
         </form>
