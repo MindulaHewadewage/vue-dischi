@@ -4,8 +4,8 @@ import { createRouter, createWebHistory } from "vue-router";
 // importo le pagine che voglio usare
 import HomePage from "../pages/HomePage.vue";
 import SuggestionFormPage from "../pages/SuggestionFormPage.vue";
+import ShowPage from "../pages/ShowPage.vue"
 // import NotFoundPage from "../pages/NotFoundPage.vue";
-// import ProjectDetailPage from "../pages/ProjectDetailPage.vue";
 
 // creiamo il router e definiamo le rotte
 const router = createRouter({
@@ -17,11 +17,11 @@ const router = createRouter({
       name: "suggestion-form",
       component: SuggestionFormPage,
     },
-    // {
-    //   path: "/projects/:id",
-    //   name: "project-detail",
-    //   component: ProjectDetailPage,
-    // },
+    {
+      path: "/games/:id",
+      name: "show-game",
+      component: ShowPage,
+    },
     // { path: "/:pathMatch(.*)*", name: "not-found", component: NotFoundPage },
   ],
 });
