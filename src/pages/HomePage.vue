@@ -29,7 +29,7 @@ export default {
         <div v-for="game in games" class="card mb-4 mx-2">
             <div class="row g-0">
                 <div class="col-7 m-0">
-                    <img :src="game.image" class="w-100 h-100 rounded-start" :alt="game.title">
+                    <img :src="game.image_url" class="w-100 h-100 rounded-start" :alt="game.title">
                 </div>
                 <div class="col-5 m-0">
                     <div class="card-body">
