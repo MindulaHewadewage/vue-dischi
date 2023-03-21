@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
-const endpoint = '';
-const emptyForm = { title: '', publisher: '', platform: '', genre: '', image: '', price: '', release_Date: '', size: '' };
+const endpoint = 'http://127.0.0.1:8000/api/videogames';
+const emptyForm = { title: '', publisher: '', description: '', platform: '', genre: '', image: '', price: '', release_Date: '', size: '' };
 
 export default {
     name: 'SuggestionFormPage',
@@ -24,7 +24,7 @@ export default {
 
 <template>
     <section class="suggestion-form">
-        <h3 class="my-4">Aggiungi un gioco</h3>
+        <h3 class="my-4">Suggerisci un gioco</h3>
         <form novalidate @submit.prevent="sendForm">
             <div class="container">
                 <div class="row">
@@ -115,9 +115,16 @@ export default {
                         </div>
                     </div>
 
+                    <!-- Iscrizione Newsletter -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="subscription" value="1"
+                            v-model="form.subscription">
+                        <label class="form-check-label" for="subscription">Iscrivimi alla NewsLetter</label>
+                    </div>
+
                     <!-- Bottoni -->
                     <div class="mb-3 d-flex justify-content-end">
-
+                        <button class="btn btn-primary" type="submit">Suggerisci</button>
                     </div>
 
 
