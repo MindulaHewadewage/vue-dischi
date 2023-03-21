@@ -32,7 +32,7 @@ export default {
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="title" class="form-label">Titolo:</label>
-                            <input type="text" class="form-control" id="title" placeholder="Titolo" name="title">
+                            <input type="text" class="form-control" id="title" placeholder="" name="title">
                         </div>
                     </div>
 
@@ -40,7 +40,16 @@ export default {
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="publisher" class="form-label">Publisher:</label>
-                            <input type="text" class="form-control" id="publisher" placeholder="Publisher" name="publisher">
+                            <input type="text" class="form-control" id="publisher" placeholder="" name="publisher">
+                        </div>
+                    </div>
+
+
+                    <!-- Descrizione -->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Descrizione</label>
+                            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
                         </div>
                     </div>
 
@@ -84,7 +93,7 @@ export default {
                     <div class="col-4">
                         <div class="mb-3">
                             <label for="price" class="form-label">Prezzo:</label>
-                            <input type="number" class="form-control" id="price" placeholder="Prezzo" name="price">
+                            <input type="number" class="form-control" id="price" placeholder="Es.€34.99" name="price">
                         </div>
                     </div>
 
@@ -102,7 +111,7 @@ export default {
                     <div class="col-4">
                         <div class="mb-3">
                             <label for="size" class="form-label">Peso:</label>
-                            <input type="number" class="form-control" id="size" placeholder="Peso" name="size">
+                            <input type="number" class="form-control" id="size" placeholder="Es.62 GB" name="size">
                         </div>
                     </div>
 
