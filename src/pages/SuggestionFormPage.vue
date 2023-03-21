@@ -11,12 +11,28 @@ export default {
 
     }),
     methods: {
+        validateForm() {
+            const errors = {};
+
+            if (!this.form.email) {
+                errors.mail = 'La mail è obbligatoria!'
+            }
+            if (!this.form.subject) {
+                errors.mail = "L'oggetto della mail è obbligatorio"
+            }
+            if (!this.form.message) {
+                errors.message = 'Il messaggio è obbligatorio'
+            }
+            this.errors = errors;
+        },
+
         sendForm() {
             axios.post(endpoint, this.form)
                 .then(() => { this.form = emptyForm })
                 .catch(err => { console.error(err) })
                 .then(() => { })
         }
+
     }
 }
 
