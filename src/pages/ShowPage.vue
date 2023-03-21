@@ -10,7 +10,7 @@ export default {
     },
     methods: {
         getGame() {
-            axios.get(apiBaseUrl + 'games/' + this.$route.params.id).then(res => { this.game = res.data })
+            axios.get(apiBaseUrl + 'videogames/' + this.$route.params.id).then(res => { this.game = res.data })
         }
     },
     created() {
