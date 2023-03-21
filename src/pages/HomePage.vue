@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-const apiUrl = '';
+const apiUrl = 'http://127.0.0.1:8000/api/videogames';
 export default {
     name: 'HomePage',
     data() {
