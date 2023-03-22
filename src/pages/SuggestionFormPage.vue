@@ -1,10 +1,12 @@
 <script>
 import axios from 'axios';
+import AppAlert from '../components/AppAlert.vue';
 const endpoint = 'http://127.0.0.1:8000/api/contact-message';
 const emptyForm = { email: '', subject: '', message: '', subscription: false };
 
 export default {
     name: 'SuggestionFormPage',
+    components: { AppAlert },
     data: () => ({
         form: emptyForm,
         isLoading: false,
@@ -68,18 +70,18 @@ export default {
 
 <template>
     <section class="suggestion-form">
-        <h3 class="my-4">Suggerisci un gioco</h3>
-        <AppLoader v-if="isLoading" />
+        <div class="container">
+            <h3 class="my-4">Suggerisci un gioco</h3>
+            <AppLoader v-if="isLoading" />
 
-        <div v-else>
-            <AppAlert :isOpen="hasErrors || alertMessage" :type="hasErrors ? 'danger' : 'success'">
-                <div v-if="alertMessage">{{ alertMessage }}</div>
-                <ul v-if="hasErrors">
-                    <li v-for="(error, key) in errors" :key="key">{{ error }}</li>
-                </ul>
-            </AppAlert>
-            <form novalidate @submit.prevent="sendForm">
-                <div class="container">
+            <div v-else>
+                <AppAlert :isOpen="hasErrors || alertMessage" :type="hasErrors ? 'danger' : 'success'">
+                    <div v-if="alertMessage">{{ alertMessage }}</div>
+                    <ul v-if="hasErrors" class="pb-0 mb-0">
+                        <li v-for="(error, key) in errors" :key="key">{{ error }}</li>
+                    </ul>
+                </AppAlert>
+                <form novalidate @submit.prevent="sendForm">
                     <div class="row">
                         <!-- EMAIL -->
                         <div class="col-12">
@@ -126,8 +128,8 @@ export default {
 
 
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
 
     </section>
