@@ -19,7 +19,7 @@ export default {
             const errors = {};
 
             if (!this.form.email) {
-                errors.email = 'La e mail è obbligatoria!'
+                errors.email = 'La email è obbligatoria!'
             }
             if (!this.form.subject) {
                 errors.subject = "L'oggetto della mail è obbligatorio"

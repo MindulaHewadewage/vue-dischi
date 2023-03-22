@@ -14,7 +14,7 @@ export default {
 <template>
     <div v-if="isOpen" class="alert fade show" :class="[{ 'alert-dismissible': dismissibile }, `alert-${type ?? 'danger'}`]"
         role="alert">
-        <strong>Error:</strong>Si è verificato un errore nel recupero del videogame.
+        <slot></slot>
         <button v-if="dismissible" type="button" class="btn-close" @click="$emit('close')"></button>
     </div>
 </template>
