@@ -8,7 +8,7 @@ export default {
     data: () => ({
         form: emptyForm,
         errors: {},
-        alertMessage
+        alertMessage: ''
 
 
     }),
