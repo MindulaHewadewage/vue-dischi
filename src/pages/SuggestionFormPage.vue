@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-const endpoint = 'http://127.0.0.1:8000/api/videogames';
+const endpoint = 'http://127.0.0.1:8000/api/contact-message';
 const emptyForm = { email: '', subject: '', message: '', subscription: false };
 
 export default {
@@ -8,7 +8,7 @@ export default {
     data: () => ({
         form: emptyForm,
         errors: {},
-        alertMessage
+        alertMessage: ''
 
 
     }),
