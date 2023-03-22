@@ -1,12 +1,14 @@
 <script>
 import axios from 'axios';
 const endpoint = 'http://127.0.0.1:8000/api/videogames';
-const emptyForm = { email: '', subject: '', message: '', subscription: '' };
+const emptyForm = { email: '', subject: '', message: '', subscription: false };
 
 export default {
     name: 'SuggestionFormPage',
     data: () => ({
         form: emptyForm,
+        errors: {},
+        alertMessage
 
 
     }),
@@ -28,7 +30,10 @@ export default {
 
         sendForm() {
             axios.post(endpoint, this.form)
-                .then(() => { this.form = emptyForm })
+                .then(() => {
+                    this.form = { email: '', subject: '', message: '', subscription: false };
+                    this.alertMessage = 'Suggerimento del gioco inviato con successo!'
+                })
                 .catch(err => { console.error(err) })
                 .then(() => { })
         }
