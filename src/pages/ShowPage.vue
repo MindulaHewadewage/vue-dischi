@@ -38,13 +38,8 @@ export default {
                         <p class="card-text">Publisher: {{ game.publisher }}</p>
                         <p class="card-text">Piattaforma: {{ game.platform }}</p>
 
-                        <p class="card-text m-0">Generi:</p>
-                        <ul class="list-group-item">
-                            <li v-for="genre in game.genres" class="list-group-item">
-                                <span>{{ genre }}</span>
-                            </li>
-                        </ul>
-                        <p class="card-text"><small class="text-muted">Data di rilascio: {{ game.releaseDate }}</small>
+                        <p class="card-text m-0">Generi:{{ game.genre }}</p>
+                        <p class="card-text"><small class="text-muted">Data di rilascio: {{ game.release_date }}</small>
                         </p>
                         <p class="card-text"><small class="text-muted">Peso: {{ game.weight }}</small></p>
                     </div>
