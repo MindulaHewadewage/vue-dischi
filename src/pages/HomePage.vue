@@ -41,7 +41,7 @@ export default {
                             <p class="card-text m-0">Generi:{{ game.genre }}</p>
                             <p class="card-text"><small class="text-muted">Data di rilascio: {{ game.release_date }}</small>
                             </p>
-                            <p class="card-text"><small class="text-muted">Peso: {{ game.weight }}</small></p>
+                            <p class="card-text"><small class="text-muted">Peso: {{ game.weight }} GB</small></p>
                         </div>
                     </div>
                 </div>
