@@ -35,17 +35,11 @@ export default {
                     <div class="col-5 m-0">
                         <div class="card-body">
                             <h4 class="card-title">{{ game.title }}</h4>
-                            <p class="card-text">Prezzo: <b>${{ game.price }}</b></p>
                             <p class="card-text">Publisher: {{ game.publisher }}</p>
                             <p class="card-text">Piattaforma: {{ game.platform }}</p>
 
-                            <p class="card-text m-0">Generi:</p>
-                            <ul class="list-group-item">
-                                <li v-for="genre in game.genres" class="list-group-item">
-                                    <span>{{ genre }}</span>
-                                </li>
-                            </ul>
-                            <p class="card-text"><small class="text-muted">Data di rilascio: {{ game.releaseDate }}</small>
+                            <p class="card-text m-0">Generi:{{ game.genre }}</p>
+                            <p class="card-text"><small class="text-muted">Data di rilascio: {{ game.release_date }}</small>
                             </p>
                             <p class="card-text"><small class="text-muted">Peso: {{ game.weight }}</small></p>
                         </div>

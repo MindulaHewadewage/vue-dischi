@@ -35,7 +35,6 @@ export default {
                         <p class="card-text">
                             {{ game.description }}
                         </p>
-                        <p class="card-text">Prezzo: <b>${{ game.price }}</b></p>
                         <p class="card-text">Publisher: {{ game.publisher }}</p>
                         <p class="card-text">Piattaforma: {{ game.platform }}</p>
 
